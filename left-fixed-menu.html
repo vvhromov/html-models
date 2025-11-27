@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <META NAME="AUTHOR" CONTENT="https://vahro.ru">
+  <title>Неподвижное вертикальное меню слева - vahro.ru</title>
+  <META NAME="description" CONTENT="Контейнер для размещения меню, position: fixed;, ширина 120px">
+</head>
+<body>
+  <header>Контейнер для размещения неподвижного вертикального меню (width: 120px;)</header>
+  <main>
+    <section class="" style="background-color: #CC8500;">1</section>
+    <section class="" style="background-color: #E6E600;">2</section>
+    <section class="" style="background-color: #00B300;">3</section>
+    <section class="" style="background-color: #3333FF">4</section>
+  </main>
+  <footer>
+    <div class="copy">
+      &copy; <a href="https://vahro.ru">vahro.ru</a>
+    </div>
+  </footer>
+  <style>
+   .copy {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      margin-top: 2rem;
+    }
+    main, 
+    footer {
+     /* margin-left - вертикальная полоска слева для меню */
+      margin-left: 120px;
+    }
+    section {
+      height: 30vh;
+      font-size: 4rem;
+      color: #000;
+      text-shadow: 2px 0 0 rgba(255,255,255,.7),0 2px 0 rgba(0,0,0,.3),-2px 0 0 rgba(255,255,255,.7),0 -2px 0 rgba(0,0,0,.3);
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+    body {
+      font-family: Inter, Arial, Helvetica, sans-serif;
+      margin: 0;
+    }
+    header {
+      display: flex;
+      flex-direction: column;
+      justify-content: space-around;
+      align-items: center;
+      width: 120px;
+      height: 100%;
+      position: fixed;
+      z-index: 10;
+      background-color: #FF3333;
+      font-weight: bold;
+      writing-mode: tb-rl;
+      transform: rotate(-180deg);
+      color: #f0f0f0;
+    }
+  </style>
+</body>
+</html>
