@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <META NAME="AUTHOR" CONTENT="https://vahro.ru">
+  <title>Marquee - vahro.ru</title>
+  <META NAME="description" CONTENT="Пример marquee (бегущая строка) без JavaScript, только css">
+</head>
+<body>
+  <style>
+
+    body {
+      font-family: Inter, Arial, Helvetica, sans-serif;
+    }
+    
+    .copy {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      margin-top: 2rem;
+    }
+
+    .marquee {
+      font-size: 85px;
+      font-size: 6rem;
+      font-style: normal;
+      font-weight: 700;
+      line-height: 116.875px;
+      width: 100vw;
+      overflow: hidden;
+      pointer-events: none;
+    }
+
+    .marquee-wrap {
+      position: relative;
+      display: flex;
+      width: -webkit-fit-content;
+      width: -moz-fit-content;
+      width: fit-content;
+      transform: translateX(calc(-25% + 20vw));
+      -webkit-animation: 20s linear infinite marquee;
+      animation: 20s linear infinite marquee;
+    }
+
+    .marquee-text {
+        padding: 0 1vw;
+        color: #fff;
+        white-space: nowrap;
+        text-shadow: 1px 0 0 rgba(0,0,0,.3),0 1px 0 rgba(0,0,0,.3),-1px 0 0 rgba(0,0,0,.3),0 -1px 0 rgba(0,0,0,.3);
+        /* text-transform: uppercase; */
+    }
+
+    @keyframes marquee {
+        0% {
+            transform: translate3d(calc(-25% + 20vw), 0, 0);
+        }
+
+        100% {
+            transform: translate3d(calc(-50% + 20vw), 0, 0);
+        }
+
+    }
+  </style>
+
+  <div class="marquee">
+    <div class="marquee-wrap"> 
+      <span class="marquee-text">Привет Hello Bonjour سلام Hola שלום</span> 
+      <span class="marquee-text">Привет Hello Bonjour سلام Hola שלום</span> 
+      <span class="marquee-text">Привет Hello Bonjour سلام Hola שלום</span>
+    </div>
+  </div>
+
+  <div class="copy">
+    &copy;&nbsp;<a href="https://vahro.ru">vahro.ru</a>
+  </div>
+
+</body>
+</html>
