@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <META NAME="AUTHOR" CONTENT="https://vahro.ru">
+  <title>Рыба - vahro.ru</title>
+  <META NAME="description" CONTENT="Здесь должно быть описание страницы">
+</head>
+<body>
+  <header>header</header>
+  <main>main</main>
+  <footer>
+    <div class="last-row">
+      <div class="copy">
+        &copy;&nbsp;<a href="https://vahro.ru">vahro.ru</a>
+      </div>
+      <div class="git">
+        этот файл (fish.html) здесь - 
+        <a href="https://github.com/vvhromov/html-models" target="_blank">https://github.com/vvhromov/html-models</a>
+      </div>
+    </div>
+  </footer>
+</body>
+<style>
+  :root {
+    --desktop-width-half: 480px;
+  }
+  html, body {
+    height: 100%;
+    margin: 0;
+  }
+  body {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    font-size: x-large;
+    margin: 0;
+    color: #444;
+    background-color: ivory;
+  }
+  header,
+  footer {
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+  }
+  main {
+    flex: 1; /* Pushes footer to the bottom */
+    padding: 10px;
+    width: calc(var(--desktop-width-half)*2);
+    margin: auto; /* section будет выровнен по центру */
+    background-color: #FFC14D;
+  }
+  .last-row {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+  }
+</style>
+</html>
