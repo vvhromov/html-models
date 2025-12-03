@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <META NAME="AUTHOR" CONTENT="https://vahro.ru">
+  <title>Список файлов - vahro.ru</title>
+  <META NAME="description" CONTENT="Модели, Решения, html+css">
+</head>
+<body>
+  <header>Список html файлов моделей</header>
+  <main class="marker">
+      <details open>
+        <summary>rainbow.html</summary>
+        <p>Rainbow 7 colors - Richard Of York Gave Battle In Vain. 
+          JavaScript для копирования в буфер обмена. CSS text-shadow </p>
+        <p><a href="rainbow.html" target="_blank">rainbow.html</a></p>
+      </details>
+      <details>
+        <summary>fish.html</summary>
+        <p>Рыба. Header-Main-Footer. Footer прижат к низу страницы.</p> 
+        <p><a href="fish.html" target="_blank">fish.html</a></p>
+      </details>
+      <details>
+        <summary>fixed-header.html</summary>
+        <p>Header-Main-Footer. Header зафиксирован. Footer прижат к низу страницы. </p>
+        <p><a href="fixed-header.html" target="_blank">fixed-header.html</a></p>
+      </details>
+      <details>
+        <summary>left-fixed-menu.html</summary>
+        <p>Неподвижное вертикальное меню слева. Вертикальный текст. CSS text-shadow - окантовка цифр</p>
+        <p><a href="left-fixed-menu.html" target="_blank">left-fixed-menu.html</a></p>
+      </details>
+      <details>
+        <summary>marquee.html</summary>
+        <p>Пример marquee (бегущая строка) без JavaScript, только css</p>
+        <p><a href="marquee.html" target="_blank">marquee.html</a></p>
+      </details>
+
+  </main>
+  <footer>
+    <div class="last-row">
+      <div class="copy">
+        &copy;&nbsp;<a href="https://vahro.ru">vahro.ru</a>
+      </div>
+      <div class="git">
+        этот файл (list.html) здесь - 
+        <a href="https://github.com/vvhromov/html-models" target="_blank">https://github.com/vvhromov/html-models</a>
+      </div>
+    </div>
+  </footer>
+</body>
+<style>
+  :root {
+    --desktop-width-half: 480px;
+    --color-wordpress: #21759b;
+  }
+  html, body {
+    height: 100%;
+    margin: 0;
+  }
+  body {
+    font-family: Inter, Arial, Helvetica, sans-serif;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    font-size: x-large;
+    margin: 0;
+    color: #444;
+    background-color: ivory;
+  }
+  header,
+  footer {
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+  }
+  main {
+    flex: 1; /* Pushes footer to the bottom */
+    padding: 10px;
+    width: calc(var(--desktop-width-half)*2);
+    margin: auto; /* section будет выровнен по центру */
+    /* background-color: #FFC14D; */
+  }
+    details {
+      border: 1px solid;
+      margin: 2px;
+      padding: 2px;
+      & p {
+        font-size: smaller;
+        padding-left: 1.5rem;
+        padding-right: 0.5rem;
+      }
+    }
+    summary {
+      font-weight: bold;
+      color: var(--color-wordpress);
+    }
+    summary:hover {
+      cursor: pointer;
+    }
+    .marker {
+      /* & details summary::-webkit-details-marker {
+        display: none;
+      } */
+      /* Убираем стандартный маркер Firefox */
+      & details > summary {
+        list-style: none;
+        display: flex;
+        align-content: end;
+      }
+      & details summary:before {
+        width: 1rem;
+        margin-right: 0.5rem;
+        content: url(svg/plus.svg);
+      }
+      & details[open] summary:before {
+        content: url(svg/minus.svg);
+      }
+      .ivory {
+        background-color: ivory;
+      }
+    }
+  .last-row {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+  }
+</style>
+</html>
