@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <META NAME="AUTHOR" CONTENT="https://vahro.ru">
+  <title>Fixed header - vahro.ru</title>
+  <META NAME="description" CONTENT="Зафиксированный хидер и футер">
+</head>
+<body>
+   <header>    header - position: fixed;  </header>
+   <main>
+    main - height: 100%;
+    <section class="one">      section 1     </section>
+    <section class="two">      section 2     </section>
+    <section class="three">      section 3     </section>
+    <section class="four">      section 4     </section>
+    <section class="five">      section 5     </section>
+    <section class="six">      section 6     </section>
+   </main>
+   <footer>
+    <div>
+      If the content on the page is short, a sticky footer will still hang to the bottom of the browser window
+    </div>
+    <div class="last-row">
+      <div class="copy">
+        &copy;&nbsp;<a href="https://vahro.ru">vahro.ru</a>
+      </div>
+      <div class="git">
+        этот файл (left-fixed-menu.html) здесь - 
+        <a href="https://github.com/vvhromov/html-models" target="_blank">https://github.com/vvhromov/html-models</a>
+      </div>
+    </div>
+   </footer>
+</body>
+<style>
+  :root {
+    --desktop-width-half: 480px;
+  }
+  html, body {
+    height: 100%;
+    margin: 0;
+  }
+  body {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    font-size: x-large;
+    margin: 0;
+  }
+  main {
+    flex: 1; /* Pushes footer to the bottom */
+    padding: 15px;
+    width: calc(var(--desktop-width-half)*2);
+    margin: auto; /* section будет выровнен по центру */
+    background-color: #E69500;
+  }
+
+  header {
+    width: calc(var(--desktop-width-half)*2 - 100px);
+    padding: 10px;
+    /* background-color: rgb(5, 14, 44); */
+    background-color: rgba(5, 14, 44, 0.75);;
+    color: white;
+    display: grid;
+    place-content: center;
+    position: fixed;
+    top: 20px;
+    left: calc(50% - var(--desktop-width-half) + 50px);
+  }
+  section {
+    /* padding: 20px; */
+    height: 15vh;
+    background-color: skyblue;
+    border: 1px solid black;
+  }
+  footer {
+    padding: 10px;
+    color: #F5F7FA;
+    background-color: #050E2C;
+  }
+  .copy {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  footer {
+    /* margin-top: 2rem; */
+    margin-bottom: 2rem;
+    display: flex;
+    flex-direction: column;
+  }
+  .last-row {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+  }
+</style>
+</html>
