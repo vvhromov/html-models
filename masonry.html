@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <META NAME="AUTHOR" CONTENT="https://vahro.ru">
+  <title>masonry - vahro.ru</title>
+  <META NAME="description" CONTENT="CSS Grid адаптивный макет">
+</head>
+<!-- 
+Никаких медиа-запросов! Верстка адаптивных макетов с CSS Grid - https://webformyself.com/nikakix-media-zaprosov-verstka-adaptivnyx-maketov-s-css-grid/
+Нативный Masonry Layout в CSS Grid Level 3 - https://habr.com/ru/articles/526008/
+-->
+<body>
+  
+  <header>header</header>
+
+  <main>
+    Макет адаптивный, при уменьшении ширины элементы встают в один столбец
+    <div class="wrapper">
+      <div class="left">left</div>
+      <div class="masonry">
+        <div class="item x3" style="background-color: #FF4D4D;">1 <span style="text-shadow:none;">min-width:250px</span></div>
+        <div class="item x5" style="background-color: #FFC14D;">2</div>
+        <div class="item x10" style="background-color: #FFFF4D;">3</div>
+        <div class="item x5" style="background-color: #00CC00;">4</div>
+        <div class="item x4" style="background-color: #4D4DFF;">5</div>
+        <div class="item x4" style="background-color: #7700CC;">6</div>
+        <div class="item x3" style="background-color: #F7C5F7;">7</div>
+        <!-- <div class="item"></div> -->
+      </div>
+    </div>
+    <p>Обязательно указывается мета тег</p>
+    <p><span>&lt;meta name="viewport" content="width=device-width, initial-scale=1"&gt;</span></p>
+    <p>Ширина <span>main</span> - комбинация <span>{width: 100%; max-width: 750px;}</span></p>
+    <p>Ширина <span>.masonry</span> - <span>{width: 100%;}</span></p>
+    <p class="red">Иначе</p>
+    <p class="red"><span>grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));</span> 
+    <p class="red">не работает адаптивно</p>
+  </main>
+  
+  <footer>
+    <div class="last-row">
+      <div class="copy">
+        &copy;&nbsp;<a href="https://vahro.ru">vahro.ru</a>
+      </div>
+      <div class="git">
+        этот файл (masonry.html) здесь - 
+        <a href="https://github.com/vvhromov/html-models" target="_blank">https://github.com/vvhromov/html-models</a>
+      </div>
+    </div>
+  </footer>
+</body>
+<style>
+  * {
+     box-sizing: border-box;
+  }
+  :root {
+    --desktop-width-half: 300px;
+  }
+  html, body {
+    height: 100%;
+    margin: 0;
+  }
+  body {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    font-size: large;
+    color: #444;
+    background-color: ivory;
+    margin: 0 auto;
+  }
+  header,
+  footer {
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+  }
+  main {
+    flex: 1; /* Pushes footer to the bottom */
+    padding: 10px;
+    width: 100%;
+    max-width: 750px;
+    margin: auto; /* section будет выровнен по центру */
+    background-color: darkgray;
+  }
+  .masonry {
+    width: 100%;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    grid-auto-rows: 10px;
+    gap: 10px;
+  }
+  .item {
+    font-size: larger;
+    text-shadow: 1px 0 0 rgba(255,255,255,.3),0 1px 0 rgba(255,255,255,.3),-1px 0 0 rgba(255,255,255,.3),0 -1px 0 rgba(255,255,255,.3);
+    padding: 10px;
+    border-style: solid;
+  }
+  .x2 {
+    grid-row: span 2;
+  }
+  .x3 {
+    grid-row: span 3;
+  }
+  .x4 {
+    grid-row: span 4;
+  }
+  .x5 {
+    grid-row: span 5;
+  }
+  .x10 {
+    grid-row: span 10;
+  }
+  .wrapper {
+    & * {
+    }
+    display: flex;
+    flex-direction: row;
+  }
+  .wrapper {
+    gap: 10px;
+  }
+  p {
+    margin: 5px 0 0;
+    & span {
+      color:#1A1AFF;
+    }
+  }
+  .red {
+    font-weight: bolder;
+    color: #B30000;
+  }
+  .left {
+    min-height: 100%;
+    padding: 0 5%;
+    background-color: gray;
+  }
+  .last-row {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    gap: 10px;
+    & .git {
+      word-break:break-all;
+    }
+  }
+</style>
+</html>
