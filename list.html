@@ -10,6 +10,11 @@
 <body>
   <header>Список html файлов моделей</header>
   <main class="marker">
+      <details>
+        <summary>list.html</summary>
+        <p>Этот файл. Html тег <span class="accent-orange">details</span> и <span class="accent-orange">summary</span> - без JavaScript. Вместо стандартного маркера SVG файлы plus.svg/minus.svg</p>
+        <p><a href="list.html" target="_blank">list.html</a></p>
+      </details>
       <details open>
         <summary>rainbow.html</summary>
         <p>Rainbow 7 colors - Richard Of York Gave Battle In Vain. 
@@ -41,6 +46,12 @@
         <p>Masonry без JavaScript, только css</p>
         <p>Макет адаптивный @media инструкции не используются</p>
         <p><a href="masonry.html" target="_blank">masonry.html</a></p>
+      </details>
+      <details>
+        <summary>daurenel-com.html</summary>
+        <p>SVG звездочки для выделения слов в тексте</p>
+        <p>пример отсюда - https://daurenel.com/</p>
+        <p><a href="daurenel-com.html" target="_blank">daurenel-com.html</a></p>
       </details>
 
   </main>
@@ -104,10 +115,10 @@
     summary:hover {
       cursor: pointer;
     }
+    .accent-orange {
+      color: #f60;
+    }
     .marker {
-      /* & details summary::-webkit-details-marker {
-        display: none;
-      } */
       /* Убираем стандартный маркер Firefox */
       & details > summary {
         list-style: none;
