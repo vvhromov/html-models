@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <META NAME="AUTHOR" CONTENT="https://vahro.ru">
+  <title>Выделение слов - vahro.ru</title>
+  <META NAME="description" CONTENT="SVG звездочки для выделения слов в тексте">
+</head>
+<body>
+  <header>header</header>
+  <main>
+    <h2 class="hero_top-title" title="Сайт - https://daurenel.com/">
+      Создадим <span class="accent-blue">эффективный</span> и&nbsp;<span class="accent-orange">красивый</span> <span>сайт</span> под&nbsp;ключ для бизнеса
+    </h2>
+    <p><img src="svg/ic-star.svg"> звездочка - SVG файл черного цвета (#000)</p>
+    <p>применяются фильтры - <a href="https://codepen.io/sosuke/pen/Pjoqqp" target="_blank">CSS filter generator to convert from black to target hex color</a></p>
+    <p>&nbsp;</p>
+    <p class="small-text accent-orange">оранжевый (#ff6600) - filter: invert(41%) sepia(47%) saturate(2157%) hue-rotate(360deg) brightness(102%) contrast(106%);</p>
+    <p class="small-text accent-blue">синий (#4f4fff) - filter: invert(39%) sepia(65%) saturate(7443%) hue-rotate(235deg) brightness(104%) contrast(100%)</p>
+    <p class="small-text">темно-серый (#444) - filter: invert(24%) sepia(6%) saturate(9%) hue-rotate(346deg) brightness(92%) contrast(84%);</p>
+  </main>
+  <footer>
+    <div class="last-row">
+      <div class="copy">
+        &copy;&nbsp;<a href="https://vahro.ru">vahro.ru</a>
+      </div>
+      <div class="git">
+        этот файл (daurenel-com.html) здесь - 
+        <a href="https://github.com/vvhromov/html-models" target="_blank">https://github.com/vvhromov/html-models</a>
+      </div>
+    </div>
+  </footer>
+</body>
+<style>
+    :root {
+    --desktop-width-half: 480px;
+    --general-black: #444;
+    --grey-text: #888077;
+    --general-white: #fffcfa;
+    --first-family: 'Aneliza', sans-serif;
+    --second-family: 'RussischSans', sans-serif;
+    --transition: all .2s;
+  }
+  html, body {
+    height: 100%;
+    margin: 0;
+  }
+  body {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    font-size: x-large;
+    margin: 0;
+    /* color: #444; */
+    color: var(--general-black);
+    background-color: ivory;
+  }
+  header,
+  footer {
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+  }
+  main {
+    flex: 1; /* Pushes footer to the bottom */
+    padding: 1rem;
+    width: calc(var(--desktop-width-half)*2);
+    margin: auto; /* section будет выровнен по центру */
+    /* background-color: #FFC14D; */
+    background-color: white;
+  }
+
+  p {
+    margin-top: 0;
+    margin-bottom: 0.5rem;
+  }
+  .hero_top-title {
+    font-family: var(--second-family);
+    font-weight: 500;
+    font-size: 52px;
+    line-height: 123%;
+    letter-spacing: -0.01em;
+    text-align: center;
+    
+    & span {
+      position: relative;
+    }
+
+    & span::before {
+      content: "";
+      position: absolute;
+      top: 2px;
+      left: -15px;
+      width: 26px;
+      height: 26px;
+      /* #444 */
+      filter: invert(24%) sepia(6%) saturate(9%) hue-rotate(346deg) brightness(92%) contrast(84%);
+      background: url(svg/ic-star.svg) no-repeat;
+     }
+    & .accent-blue::before {
+      /* color: #4f4fff; */
+      filter: invert(39%) sepia(65%) saturate(7443%) hue-rotate(235deg) brightness(104%) contrast(100%);
+    }
+    & .accent-orange::before {
+    /* color: #f60; */
+    filter: invert(41%) sepia(47%) saturate(2157%) hue-rotate(360deg) brightness(102%) contrast(106%);
+    }
+  }
+  .small-text {
+    font-size: 1rem;
+  }
+  .accent-orange {
+    color: #f60;
+  }
+
+  .accent-blue
+  {
+    color: #4f4fff;
+  }
+
+  .last-row {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+  }
+</style>
+</html>
