@@ -1,0 +1,125 @@
+<!-- box-shadow: 0px 0px 20px 0px rgba(215, 243, 255, .2); -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <META NAME="AUTHOR" CONTENT="https://vahro.ru">
+  <title>SVG hover - vahro.ru</title>
+  <META NAME="description" CONTENT="Замена SVG файла при наведении указателя">
+</head>
+<body>
+  <header>header</header>
+  <main>
+    <div class="link-inside">
+      <a href="tel:+79035897865" title="Позвоните +7-903-589-78-65">
+        <img class="img-base" src="svg/phone.svg" alt="Позвонить +7-903-589-78-65">
+        <img class="img-hover" src="svg/ring.svg" alt="Позвонить +7-903-589-78-65">
+      </a>
+    </div>
+    <div class="link-inside">
+      <a href="https://t.me/vvhromov" title="telegram - @vvhromov" target="_blank">
+        <img class="img-base" src="svg/vvhromov-qr.svg" alt="telegram - @vvhromov">
+        <img class="img-hover" src="svg/telegram-plane.svg" alt="telegram - @vvhromov">
+      </a>
+    </div>
+    <div class="link-inside">
+      <a href="" title="Напишите на email">
+        <img class="img-base" src="svg/envelope.svg" alt="Email">
+        <img class="img-hover" src="svg/pen.svg" alt="Написать на email">
+      </a>
+    </div>
+  </main>
+  <footer>
+    <div class="last-row">
+      <div class="copy">
+        &copy;&nbsp;<a href="https://vahro.ru">vahro.ru</a>
+      </div>
+      <div class="git">
+        этот файл (svg-hover.html) здесь - 
+        <a href="https://github.com/vvhromov/html-models" target="_blank">https://github.com/vvhromov/html-models</a>
+      </div>
+    </div>
+  </footer>
+</body>
+<style>
+
+  .link-inside {
+    width: 100px;
+    height: 100px;
+    position: relative;
+  }
+  .img-base, .img-hover {
+    position: absolute;
+    left: 5px;
+    cursor: pointer;
+  }
+  .link-inside:not(:hover) .img-base {
+    opacity: 1;
+    transition: opacity 1.0s  ease-in-out;
+  }
+  .link-inside:hover .img-hover {
+    opacity: 1;
+    transition: opacity 1.0s  ease-in-out;
+  }
+  .link-inside:hover .img-base {
+    opacity: 0;
+    transition: opacity 1.0s  ease-in-out;
+  }
+  .link-inside:not(:hover) .img-hover {
+    opacity: 0;
+    transition: opacity 1.0s  ease-in-out;
+  }
+
+
+
+  * { 
+    box-sizing: border-box;
+  }
+  :root {
+    --desktop-width-half: 480px;
+  }
+  html, body {
+    height: 100%;
+    margin: 0;
+  }
+  body {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    font-size: x-large;
+    margin: 0;
+    color: #444;
+    background-color: ivory;
+  }
+  header,
+  footer {
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+  }
+  main {
+    flex: 1; /* Pushes footer to the bottom */
+    padding: 10px;
+    width: calc(var(--desktop-width-half)*2);
+    margin: auto; /* section будет выровнен по центру */
+    /* background-color: #FFC14D; */
+    background-color:beige;
+    display: flex;
+    justify-content:space-evenly;
+    align-items: center;
+    gap: 1rem;
+  }
+  img {
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+  }
+  .last-row {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+  }
+</style>
+</html>
+
+
